@@ -12,5 +12,6 @@ func main(){
 		logger.Errorf("Error on initialize configs: %v ",err)
 		panic(err)
 	}
+	// db := configs.GetDatabase()
 	router.InitRouter()
 }

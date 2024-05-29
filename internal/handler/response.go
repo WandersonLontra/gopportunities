@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/WandersonLontra/gopportunities/internal/schema"
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,3 +22,14 @@ func sendSuccess(ctx *gin.Context, operation string, data interface{}) {
 		"data": data,
 	})
 }
+
+
+type ErrorResponse struct {
+	Message string `json:"message"`
+}
+
+type SuccessResponse struct {
+	Message string 					`json:"message"`
+	Data	schema.OpeningResponse	`json:"data"`
+}
+

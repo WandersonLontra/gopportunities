@@ -16,7 +16,8 @@ build:
 test:
 	@go test ./ ...
 docs:
-	@swag init -g ./cmd/gopportunities/main.go
+	@cd ./cmd/gopportunities
+	@swag init -g ./cmd/gopportunities/main.go -o docs
 clean:
 	@rm -f $(APP_NAME)
 	@rm -rf ./docs

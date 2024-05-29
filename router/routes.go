@@ -1,7 +1,7 @@
 package router
 
 import (
-	docs "github.com/WandersonLontra/gopportunities/cmd/gopportunities/docs"
+	docs "github.com/WandersonLontra/gopportunities/docs"
 	"github.com/WandersonLontra/gopportunities/internal/handler"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
@@ -25,9 +25,9 @@ func initializeRoutes(router *gin.Engine){
 	docs.SwaggerInfo.Title = "Gopportunities Example API"
 	docs.SwaggerInfo.Description = "This is a sample server for Gopportunities server."
 	docs.SwaggerInfo.Version = "1.0"
-	docs.SwaggerInfo.Host = "localhost:9000"
+	// docs.SwaggerInfo.Host = "localhost:9000"
 	docs.SwaggerInfo.BasePath = basePath
-	docs.SwaggerInfo.Schemes = []string{"http", "https"}
+	docs.SwaggerInfo.Schemes = []string{"http"}
 
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
